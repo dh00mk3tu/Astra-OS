@@ -34,7 +34,7 @@ sudo ln -sf bash /bin/sh
 3. On Line 43; 
 
 ```bash
-makeinfo: missing file argument.
+makeinfo: command not found.
 ```
 
 To fix this,
