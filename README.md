@@ -1,8 +1,11 @@
-# LFS-System9.1
-Custom LFS System 9.1 
+# Active Branch - Astra OS
+Active Branch of Astra-OS; refer this file to get started.
+
+
 ---
-### Check Version 
-#### You need to check the version of all the required libraries. To do this, run the following command after cloning the repo branch 'dev'
+##    Get Started
+###   Check Version 
+####  You need to check the version of all the required libraries. To do this, run the following command after cloning the repo branch 'dev'
 
 ```bash 
 ./version-check.sh
