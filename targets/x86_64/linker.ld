@@ -11,6 +11,6 @@ SECTION
 
     .text :
     {
-        *(.text)
+        *(.text *)
     }
 }
