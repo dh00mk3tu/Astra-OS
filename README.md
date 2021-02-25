@@ -57,3 +57,8 @@ sudo apt install texinfo
 docker run --rm -it -v "$pwd":/root/env astraos-benv
 ```
 
+#### To build
+```bash 
+make build-x86-64
+```
+
