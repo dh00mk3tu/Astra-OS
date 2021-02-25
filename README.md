@@ -49,3 +49,11 @@ or
 ```bash 
 sudo apt install texinfo
 ``` 
+
+
+### Build 
+#### To enter the virtual build env
+```bash 
+docker run --rm -it -v "$pwd":/root/env astraos-benv
+```
+
