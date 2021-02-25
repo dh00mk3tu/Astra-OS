@@ -52,6 +52,11 @@ sudo apt install texinfo
 
 
 ### Build 
+#### Building the Docker img 
+```bash
+docker build buildenv -t astraos-benv 
+```
+
 #### To enter the virtual build env
 ```bash 
 docker run --rm -it -v "$pwd":/root/env astraos-benv
