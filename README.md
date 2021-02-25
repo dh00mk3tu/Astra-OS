@@ -62,3 +62,8 @@ docker run --rm -it -v "$pwd":/root/env astraos-benv
 make build-x86-64
 ```
 
+#### Remove the build env img 
+```bash 
+docker rmi astraos-benv -f
+```
+
