@@ -59,7 +59,7 @@ docker build buildenv -t astraos-benv
 
 #### To enter the virtual build env
 ```bash 
-docker run --rm -it -v "$pwd":/root/env astraos-benv
+docker run --rm -it -v "$PWD":/root/env astraos-benv
 ```
 
 #### To build
