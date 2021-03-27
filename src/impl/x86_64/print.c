@@ -31,6 +31,15 @@ void print_clear() {
     }
 }
 
+void print_newLine() {
+    col = 0;
+
+    if(row < NUM_ROWS - 1) {
+        row++;
+        return;
+    }
+}
+
 void print_char() {
     if(character == '\n'){
         print_newLine();
