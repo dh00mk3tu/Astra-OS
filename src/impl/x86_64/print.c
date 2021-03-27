@@ -19,9 +19,21 @@ void clear_row(size_t row ){
         Character: '',
         color: color,
     };
+
+    for( size_t col = 0; col < NUM_COLS; col++ ){
+        buffer[col + NUM_COLS * row] = empty;
+    }
 }
+
 void print_clear() {
     for (size_t i = 0; i < NUM_COLS;i++) {
         clear_row();
+    }
+}
+
+void print_char() {
+    if(character == '\n'){
+        print_newLine();
+        return;
     }
 }
