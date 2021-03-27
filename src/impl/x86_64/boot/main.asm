@@ -70,6 +70,12 @@ error:
 
 section .bss
 align 4096
+page_table_14:
+    resb 4096
+page_table_13:
+    resb 4096
+page_table_13:
+    resb 4096
 stack_bottom:
     resb 4096 * 4
 stack_top:
