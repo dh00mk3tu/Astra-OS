@@ -36,4 +36,6 @@ void print_char() {
         print_newLine();
         return;
     }
+
+    if (col > NUM_COLS)
 }
