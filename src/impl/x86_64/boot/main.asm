@@ -60,6 +60,10 @@ check_long_mode:
     mov al, "L"
     jmp error
 
+setup_page_tables:
+    mov eax, page_table_13
+    or eax, 0b11 ; present, writable
+    mov [page_table_14], eax
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
