@@ -85,6 +85,10 @@ setup_page_tables:
 
 enable_paging: 
     ; pass page table location to cpu 
+    moc eax, page_table_l4
+    mov cr3, eax
+
+    ; enable PAE
 
 error:
     ; print "ERR: X" where X is the error code
