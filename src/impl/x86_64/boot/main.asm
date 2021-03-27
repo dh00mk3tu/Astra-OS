@@ -125,3 +125,9 @@ page_table_l3:
 stack_bottom:
     resb 4096 * 4
 stack_top:
+
+
+section .rodata
+gdt64:
+    dq 0 ; zero entry 
+    dq (1 << 43) | (1 << 44) | (1 << 47) | (1 << 53) ; code segment  
