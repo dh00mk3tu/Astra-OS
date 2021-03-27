@@ -40,7 +40,10 @@ void print_newLine() {
     }
 
     for (size_t row = 1; row < NUM_ROWS; row++) {
-        for (size_t col = 0; col < NUM_COLS; col++)
+        for (size_t col = 0; col < NUM_COLS; col++) {
+            struct Char character = buffer[col + NUM_COLS * row];
+            buffer[col + NUM_COLS * (row-1)] = character;
+        }
     }
 }
 
