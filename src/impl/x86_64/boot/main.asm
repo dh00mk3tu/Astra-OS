@@ -16,10 +16,8 @@ start:
     lgdt [gdt64.pointer]
     jmp gdt64.code_segment:long_mode_start
 
-    ; print 'AstraOS'
-    mov dword [0xb8000], 0x2f4b2f4f
     hlt
-
+    
 check_multiboot:
     cmp eax, 0x36d76289
     jne .no_multiboot
