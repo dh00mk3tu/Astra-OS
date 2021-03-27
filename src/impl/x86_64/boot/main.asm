@@ -70,10 +70,14 @@ setup_page_tables:
     mov [page_table_13], eax
 
     mov ecx, 0 ; counter
+.loop:
+
+    mov eax, 0x200000 ; 2MiB
 
     inc ecx ; increment counter
     cmp ecx, 512 ; checks if the whole table is mapped
     jne .loop ; if no, continue 
+
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
