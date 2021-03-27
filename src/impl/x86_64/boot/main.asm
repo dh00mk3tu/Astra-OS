@@ -89,7 +89,14 @@ enable_paging:
     mov cr3, eax
 
     ; enable PAE
+    mov eax, cr4 
+    or eax, 1 << 5
+    mov cr4, eax
 
+    ; enable long mode 
+    mov ecx, 0xC0000080
+    rmdsr 
+    or eax, 1 << 8
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
