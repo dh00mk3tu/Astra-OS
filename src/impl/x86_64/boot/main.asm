@@ -97,6 +97,15 @@ enable_paging:
     mov ecx, 0xC0000080
     rmdsr 
     or eax, 1 << 8
+    wrmsr 
+
+    ; enable paging 
+    mov eax, cr0 
+    or  eax, 1 << 31
+    mov cr0, eax
+
+    ret
+
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
