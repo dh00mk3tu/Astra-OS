@@ -61,18 +61,21 @@ check_long_mode:
     jmp error
 
 setup_page_tables:
-    mov eax, page_table_13
+    mov eax, page_table_l3
     or eax, 0b11 ; present, writable
-    mov [page_table_14], eax
+    mov [page_table_l4], eax
 
-    mov eax, page_table_12
+    mov eax, page_table_l2
     or eax, 0b11 ; present, writable
-    mov [page_table_13], eax
+    mov [page_table_l3], eax
 
     mov ecx, 0 ; counter
 .loop:
 
     mov eax, 0x200000 ; 2MiB
+    mul ecx, 
+    or eax, 0b1000011 ; present, writable, huge page
+    mov [page_table_l2]
 
     inc ecx ; increment counter
     cmp ecx, 512 ; checks if the whole table is mapped
@@ -88,11 +91,11 @@ error:
 
 section .bss
 align 4096
-page_table_14:
+page_table_l4:
     resb 4096
-page_table_13:
+page_table_l3:
     resb 4096
-page_table_13:
+page_table_l3:
     resb 4096
 stack_bottom:
     resb 4096 * 4
