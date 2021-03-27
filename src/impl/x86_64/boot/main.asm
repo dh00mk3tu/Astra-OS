@@ -69,6 +69,7 @@ error:
     hlt
 
 section .bss
+align 4096
 stack_bottom:
     resb 4096 * 4
 stack_top:
