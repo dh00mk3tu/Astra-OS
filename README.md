@@ -72,3 +72,6 @@ make build-x86-64
 docker rmi astraos-benv -f
 ```
 
+### Emulate
+
+
