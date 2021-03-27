@@ -73,5 +73,8 @@ docker rmi astraos-benv -f
 ```
 
 ### Emulate
-
+#### Emulating ISO using QEMU 
+```bash
+qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso
+```
 
