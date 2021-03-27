@@ -30,8 +30,15 @@ check_cpuid:
     push eax
     popfd
     pushfd
-    pop eax 
+    pop eax
+    push ecx
+    popfd
+    cmp eax, ecx
+    je .no_cpuid
+    ret 
 
+.no_cpuid:
+    mov al, "C"
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
