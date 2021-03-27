@@ -1,5 +1,5 @@
 global long_mode_start
-
+extern kernel_main
 section .text 
 bits 64
 long_mode_start:
@@ -11,6 +11,5 @@ long_mode_start:
     mov fs, ax
     mov gs, ax
 
-    ; print 'AstraOS'
-    mov dword [0xb8000], 0x2f4b2f4f
+    call kernel_main
     hlt
