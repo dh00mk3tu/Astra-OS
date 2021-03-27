@@ -37,5 +37,14 @@ void print_char() {
         return;
     }
 
-    if (col > NUM_COLS)
+    if (col > NUM_COLS){
+        print_newLine();
+    }
+
+    buffer[col + NUM_COLS * row] = (struct Char) {
+        character: (uint8_t) character,
+        color: color,
+    };
+
+    col++;
 }
