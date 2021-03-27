@@ -38,6 +38,10 @@ void print_newLine() {
         row++;
         return;
     }
+
+    for (size_t row = 1; row < NUM_ROWS; row++) {
+        for (size_t col = 0; col < NUM_COLS; col++)
+    }
 }
 
 void print_char() {
