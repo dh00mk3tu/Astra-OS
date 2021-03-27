@@ -45,6 +45,8 @@ void print_newLine() {
             buffer[col + NUM_COLS * (row-1)] = character;
         }
     }
+
+    clear_row(NUM_COLS - 1);
 }
 
 void print_char() {
