@@ -75,11 +75,16 @@ setup_page_tables:
     mov eax, 0x200000 ; 2MiB
     mul ecx, 
     or eax, 0b1000011 ; present, writable, huge page
-    mov [page_table_l2]
+    mov [page_table_l2 + ecx * 8], eax
 
     inc ecx ; increment counter
     cmp ecx, 512 ; checks if the whole table is mapped
     jne .loop ; if no, continue 
+
+    ret
+
+enable_paging: 
+    ; pass page table location to cpu 
 
 error:
     ; print "ERR: X" where X is the error code
