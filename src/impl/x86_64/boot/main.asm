@@ -9,6 +9,9 @@ start:
     call check_cpuid
     call check_long_mode
 
+    call setup_page_tables
+    call enable_paging
+
     ; print 'AstraOS'
     mov dword [0xb8000], 0x2f4b2f4f
     hlt
