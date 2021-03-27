@@ -39,6 +39,11 @@ check_cpuid:
 
 .no_cpuid:
     mov al, "C"
+    jmp error
+
+check_long_mode:
+    mov eax, 0x80000000
+    cpuid
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
