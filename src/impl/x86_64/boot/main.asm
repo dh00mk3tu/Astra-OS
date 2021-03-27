@@ -68,6 +68,12 @@ setup_page_tables:
     mov eax, page_table_12
     or eax, 0b11 ; present, writable
     mov [page_table_13], eax
+
+    mov ecx, 0 ; counter
+
+    inc ecx ; increment counter
+    cmp ecx, 512 ; checks if the whole table is mapped
+    jne .loop ; if no, continue 
 error:
     ; print "ERR: X" where X is the error code
     mov dword [0xb8000], 0x4f534f45
